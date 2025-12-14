@@ -26,6 +26,11 @@ const Header = ({ showHomeButton = false }: HeaderProps) => {
             src={collegeLogo} 
             alt="Ramakrishna Mission Vivekananda College Logo" 
             className="relative w-28 h-28 md:w-36 md:h-36 object-contain drop-shadow-lg animate-float"
+            width={144}
+            height={144}
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
           />
         </div>
         
