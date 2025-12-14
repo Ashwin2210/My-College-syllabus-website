@@ -1,88 +1,109 @@
+@import '@fontsource/playfair-display/400.css';
+@import '@fontsource/playfair-display/700.css';
+@import '@fontsource/source-sans-pro/400.css';
+@import '@fontsource/source-sans-pro/600.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Academic Color Palette */
+    --background: 220 30% 97%;
+    --foreground: 220 40% 13%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 40% 13%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 40% 13%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Royal Blue - Primary */
+    --primary: 220 70% 25%;
+    --primary-foreground: 45 100% 96%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Gold Accent */
+    --secondary: 45 90% 50%;
+    --secondary-foreground: 220 40% 13%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 20% 92%;
+    --muted-foreground: 220 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 45 80% 55%;
+    --accent-foreground: 220 40% 13%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 220 70% 35%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Semester Colors */
+    --sem-1: 340 75% 55%;
+    --sem-2: 25 90% 55%;
+    --sem-3: 160 70% 40%;
+    --sem-4: 200 80% 50%;
+    --sem-5: 270 70% 55%;
+    --sem-6: 330 70% 50%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 70% 20%) 0%, hsl(220 60% 35%) 50%, hsl(200 70% 40%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(45 90% 50%) 0%, hsl(35 95% 55%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 30% 98%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(220 40% 13% / 0.08);
+    --shadow-md: 0 8px 24px -8px hsl(220 40% 13% / 0.12);
+    --shadow-lg: 0 16px 48px -16px hsl(220 40% 13% / 0.16);
+    --shadow-glow: 0 0 30px hsl(45 90% 50% / 0.3);
+
+    /* Typography */
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Source Sans Pro', system-ui, sans-serif;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 220 40% 8%;
+    --foreground: 220 20% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 35% 12%;
+    --card-foreground: 220 20% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 35% 12%;
+    --popover-foreground: 220 20% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 45 90% 55%;
+    --primary-foreground: 220 40% 10%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 50% 30%;
+    --secondary-foreground: 220 20% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 220 30% 18%;
+    --muted-foreground: 220 15% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 45 80% 50%;
+    --accent-foreground: 220 40% 10%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 220 30% 20%;
+    --input: 220 30% 20%;
+    --ring: 45 80% 50%;
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -99,7 +120,146 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Semester button colors */
+  .semester-1 {
+    background: linear-gradient(135deg, hsl(var(--sem-1)) 0%, hsl(var(--sem-1) / 0.85) 100%);
+  }
+  .semester-2 {
+    background: linear-gradient(135deg, hsl(var(--sem-2)) 0%, hsl(var(--sem-2) / 0.85) 100%);
+  }
+  .semester-3 {
+    background: linear-gradient(135deg, hsl(var(--sem-3)) 0%, hsl(var(--sem-3) / 0.85) 100%);
+  }
+  .semester-4 {
+    background: linear-gradient(135deg, hsl(var(--sem-4)) 0%, hsl(var(--sem-4) / 0.85) 100%);
+  }
+  .semester-5 {
+    background: linear-gradient(135deg, hsl(var(--sem-5)) 0%, hsl(var(--sem-5) / 0.85) 100%);
+  }
+  .semester-6 {
+    background: linear-gradient(135deg, hsl(var(--sem-6)) 0%, hsl(var(--sem-6) / 0.85) 100%);
+  }
+
+  /* Animation for buttons */
+  .semester-btn {
+    @apply relative overflow-hidden transition-all duration-300 ease-out;
+    transform: translateY(0);
+  }
+
+  .semester-btn:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -15px hsl(var(--foreground) / 0.25);
+  }
+
+  .semester-btn::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%);
+  }
+
+  .semester-btn:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Subject card styles */
+  .subject-card {
+    @apply bg-card rounded-xl p-6 transition-all duration-300 cursor-pointer;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid hsl(var(--border));
+  }
+
+  .subject-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: hsl(var(--primary) / 0.3);
+  }
+
+  /* Print styles */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    
+    body {
+      background: white !important;
+      color: black !important;
+    }
+
+    .print-content {
+      @apply p-0;
+    }
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-gold);
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--secondary) / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(var(--secondary) / 0.5);
+    }
   }
 }
