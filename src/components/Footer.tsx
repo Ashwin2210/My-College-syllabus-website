@@ -4,7 +4,7 @@ const Footer = () => {
       <p className="text-sm text-muted-foreground font-body">
         © {new Date().getFullYear()} Ramakrishna Mission Vivekananda College. All rights reserved.
       </p>
-      <p className="text-xs text-muted-foreground/70 mt-2 font-body">
+      <p className="text-xs text-muted-foreground mt-2 font-body">
         B.Com Information System Management - Course Syllabus Portal
       </p>
     </footer>
